@@ -11,7 +11,7 @@
   import * as Plotly from "plotly.js-dist";
 
   const configuration = new Configuration({
-    apiKey: "HERE GOES YOUR API KEY",
+    apiKey: "YOUR API KEY GOES HERE",
   });
 
   const openai = new OpenAIApi(configuration);
@@ -57,7 +57,6 @@
     const jsonResponse = JSON.parse(response.data.choices[0].message.content);
     analysisResults.push(jsonResponse);
     console.log(analysisResults);
-    updateAnalysisResults();
   }
 
 
@@ -104,7 +103,8 @@
 
   onMount(() => {
     setInterval(() => {
-      
+      updateAnalysisResults();
+
     }, 1000);
   });
 
